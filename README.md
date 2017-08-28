@@ -10,6 +10,14 @@ The option `--header` will mark the first row in bold. The option ``--link``
 will link the cells of the first column (excluding header if applicable) within
 the wiki.
 
-# License
+## Loading into R
+
+To use these files in R, it is best to use
+
+    read.csv('table.csv', row.names = 1)
+
+This will use the first column as the row names of the R data frame.
+
+## License
 
 MIT/Expat.
