@@ -7,7 +7,6 @@
 import argparse
 import csv
 
-
 def main():
     options = _parse_args()
 
@@ -33,14 +32,11 @@ def main():
     ]
 
     formats = ['{{:{}s}}'.format(width) for width in widths]
-    format = '|| ' + ' || '.join(formats) + ' ||'
+    format = '|| ' + ' || '.join(formats) + ' ||\n'
 
-    for row in rows:
-        print(format.format(*row))
-
-
-
-
+    with open(options.output, 'w') as f:
+        for row in rows:
+            f.write(format.format(*row))
 
 
 def _parse_args():
